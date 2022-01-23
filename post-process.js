@@ -3,9 +3,14 @@
 // You can test this script locally on your computer by runinng `deno run -A --unstable postprocess.ts data.json`
 import { readImageFromURL, readJSON, writeImage } from 'https://deno.land/x/flat@0.0.11/mod.ts';
 const causewayCam = '2701';
+const hours = 8;
 const getLocalHours = () => {
   const tzoffset = (new Date()).getTimezoneOffset() * 60000; //offset in milliseconds
   return (new Date(Date.now() - tzoffset)).getHours();
+}
+
+const convertUtcToLocal = (hours) => {
+  return (new Date().getHours()) + hours;
 }
 
 // Get the data filename as the first argument
@@ -17,6 +22,6 @@ const imageURL = cameras
 
 // Postprocess steps
 const image = await readImageFromURL(imageURL) // fetch the image
-const imageName = getLocalHours();
+const imageName = convertUtcToLocal(hours);
 await writeImage(image.bytes, `./causeway-${imageName}.jpg`) // create a jpg file
 
