@@ -10,7 +10,8 @@ const getLocalHours = () => {
 }
 
 const convertUtcToLocal = (hours) => {
-  return (new Date().getHours()) + hours;
+  const date = (new Date().getHours()) + hours;
+  return date > 23 ? date - 24 : date;
 }
 
 // Get the data filename as the first argument
