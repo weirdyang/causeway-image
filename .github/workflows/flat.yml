@@ -23,4 +23,4 @@ jobs:
         with:
           http_url: https://api.data.gov.sg/v1/transport/traffic-images # The data to fetch every day
           downloaded_filename: data.json # The http_url gets saved and renamed in our repository as data.json
-          postprocess: post-process.js # A postprocessing javascript or typescript file written in Deno
+          postprocess: post-process.ts # A postprocessing javascript or typescript file written in Deno
