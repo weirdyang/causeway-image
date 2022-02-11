@@ -1,7 +1,7 @@
 // Helper library written for useful postprocessing tasks with Flat Data
 // Has helper functions for manipulating csv, txt, json, excel, zip, and image files
 // You can test this script locally on your computer by runinng `deno run -A --unstable postprocess.ts data.json`
-import { readImageFromURL, readJSON, writeImage } from 'https://deno.land/x/flat@0.0.13/mod.ts';
+import { readImageFromURL, readJSON, writeImage } from 'https://deno.land/x/flat@0.0.14/mod.ts';
 const causewayCam = '2701';
 const hours = 8;
 const getLocalHours = () => {
